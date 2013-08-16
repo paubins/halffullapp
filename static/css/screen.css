@@ -1,0 +1,105 @@
+body {
+    background-color: #0f545d;
+    color: #fff;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+}
+
+.header {
+    height: 610px;
+    width: 100%;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    background-color: #1d666f;
+    text-align: center;
+    border-top: 10px solid #06434b;
+}
+
+
+.content {
+    height: 100%;
+    position: relative;
+    width: 730px;
+    margin: 0 auto;
+}
+
+.content > .phone {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.content > .glass {
+    position: absolute;
+    top: 65px;
+    left: 330px;
+}
+
+.content > h1 {
+    display: block;
+    position: absolute;
+    top: 230px;
+    width: 100%;
+    text-align: center;
+    font-size: 31px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 500;
+}
+
+.content > h2 {
+    display: block;
+    position: absolute;
+    top: 280px;
+    width: 100%;
+    text-align: center;
+    color: #bcdde7; /* text color */
+    font-size: 15px;
+    letter-spacing: 0.18em;
+    line-height: 25px;
+}
+
+.download {
+    border: 5px solid #237a85;
+    width: 260px;
+    height: 65px;
+    display: block;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #9dc1cb;
+    line-height: 65px;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 15px;
+    letter-spacing: 0.175em;
+    position: absolute;
+    top: 60px;
+    left: 30px;
+}
+
+.footer {
+    text-align: center;
+}
+
+.footer > div {
+    position: relative;
+    margin: 0 auto;
+    width: 330px;
+    height: 600px;
+    text-align: center;
+}
+
+.footer > div > img {
+    position: absolute;
+    top: 160px;
+    left: 155px;
+}
+
+.footer > div > p {
+    position: absolute;
+    top: 215px;
+    color: #9dc1cb;
+    font-size: 14px;
+    line-height: 22px;
+}
