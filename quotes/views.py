@@ -4,8 +4,9 @@ from django.utils import simplejson
 
 import models
 import random
+import redis
 
-def quote(request, mood=None, lang=None):
+def quote(request, mood=None, lang=None, uuid=None):
     quotes = list(models.Quote.objects.filter(mood=mood, lang=lang))
     random.shuffle(quotes)
 
