@@ -61,21 +61,15 @@ body {
 }
 
 .download {
-    border: 5px solid #237a85;
-    width: 260px;
-    height: 65px;
     display: block;
     text-transform: uppercase;
     text-decoration: none;
     color: #9dc1cb;
-    line-height: 65px;
     text-align: center;
     margin: 0 auto;
     font-size: 15px;
     letter-spacing: 0.175em;
-    position: absolute;
-    top: 60px;
-    left: 30px;
+    margin-top: 50px;
 }
 
 .footer {

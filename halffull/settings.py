@@ -17,7 +17,15 @@ DATABASES = {
         'PASSWORD': 'SKj91jdsjx12',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-    }
+    },
+    'celery': {
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'halffull_celery',                      # Or path to database file if using sqlite3.
+        'USER': 'halffull',                      # Not used with sqlite3.
+        'PASSWORD': 'SKj91jdsjx12',                  # Not used with sqlite3.
+        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+    },
 }
 
 # Local time zone for this installation. Choices can be found here:
@@ -122,7 +130,8 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'quotes',
-    'south'
+    'south',
+    'djcelery',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -145,11 +154,14 @@ LOGGING = {
             'class': 'django.utils.log.AdminEmailHandler'
         }
     },
-    'loggers': {
-        'django.request': {
-            'handlers': ['mail_admins'],
-            'level': 'ERROR',
-            'propagate': True,
-        },
-    }
 }
+
+CACHES = {
+    'default': {
+        'BACKEND': 'redis_cache.RedisCache',
+        'LOCATION': 'localhost:6379'
+    },
+}
+
+import djcelery
+djcelery.setup_loader()

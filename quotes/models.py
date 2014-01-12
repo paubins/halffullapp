@@ -22,4 +22,4 @@ class Quote(models.Model):
     attribution = models.CharField(max_length=255)
     color = models.CharField(max_length=10, blank=True, null=True)
     lang = models.CharField(max_length=10, choices=LANGUAGES, null=True, default='en')
-    translated_quotes = models.ManyToManyField('self', related_name='translation')
+    translated_quotes = models.ManyToManyField('self', related_name='translation', symmetrical=False, blank=True, null=True, editable=False)
