@@ -3,6 +3,9 @@ from django.conf.global_settings import LANGUAGES
 
 MOODS = (
     ('angry', 'angry'),
+    ('ugly', 'ugly'),
+    ('broke', 'broke'),
+    ('betrayed', 'betrayed'),
     ('impatient', 'impatient'),
     ('tired', 'tired'),
     ('lonely', 'lonely'),
