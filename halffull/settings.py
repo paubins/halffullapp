@@ -163,5 +163,7 @@ CACHES = {
     },
 }
 
+TRANSLATE_API_KEY = 'AIzaSyB0D69gAJlfMTuQgIe-CN1r9lTpjeTdQRM'
+
 import djcelery
 djcelery.setup_loader()
