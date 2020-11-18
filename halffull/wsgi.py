@@ -1,3 +1,4 @@
+from __future__ import unicode_literals
 """
 WSGI config for halffull project.
 
@@ -26,3 +27,6 @@ application = get_wsgi_application()
 # Apply WSGI middleware here.
 # from helloworld.wsgi import HelloWorldApplication
 # application = HelloWorldApplication(application)
+
+import uuid
+uuid._uuid_generate_random = None
