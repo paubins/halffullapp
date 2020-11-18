@@ -12,6 +12,7 @@ psycopg2
 dj_database_url
 gunicorn
 simplejson
+redis
 redis_cache
 django-redis-cache 
 dj-redis-url
