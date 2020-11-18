@@ -165,7 +165,7 @@ LOGGING = {
 #    },
 # }
 
-redis_url = urlparse(os.environ.get('REDISCLOUD_URL'))
+redis_url = urlparse(os.environ.get('REDIS_URL'))
 CACHES = {
         'default': {
             'BACKEND': 'redis_cache.RedisCache',
