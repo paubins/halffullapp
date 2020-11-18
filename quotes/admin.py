@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-import models
+from .quotes import models
 
 from tasks import translate_quote
 from django.contrib import messages

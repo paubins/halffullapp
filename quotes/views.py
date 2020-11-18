@@ -6,7 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 from itertools import chain
 
-import models
+from .quotes import models
 import random
 
 def translate_language(lang):
