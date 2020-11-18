@@ -13,3 +13,4 @@ dj_database_url
 gunicorn
 simplejson
 redis_cache
+django-redis-cache 
