@@ -2,7 +2,7 @@ from django.contrib import admin
 
 from quotes import models
 
-from tasks import translate_quote
+# from quotes.tasks import translate_quote
 from django.contrib import messages
 
 def translate_quote_action(modeladmin, request, queryset):
