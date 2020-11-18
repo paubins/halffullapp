@@ -12,25 +12,17 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'halffull',                      # Or path to database file if using sqlite3.
-        'USER': 'halffull',                      # Not used with sqlite3.
-        'PASSWORD': 'SKj91jdsjx12',                  # Not used with sqlite3.
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'halffullapp',                      # Or path to database file if using sqlite3.
+        'USER': 'root',                      # Not used with sqlite3.
+        'PASSWORD': 'MyNewPassword',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-    },
-    'celery': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'halffull_celery',                      # Or path to database file if using sqlite3.
-        'USER': 'halffull',                      # Not used with sqlite3.
-        'PASSWORD': 'SKj91jdsjx12',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-    },
+    }
 }
 
-DATABASES = {}
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+# DATABASES = {}
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -123,6 +115,7 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
+    'redis_cache',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -158,11 +151,13 @@ LOGGING = {
     },
 }
 
+CACHE_BACKEND = 'redis_cache.cache://localhost:6379'
 CACHES = {
-    'default': {
-        'BACKEND': 'redis_cache.RedisCache',
-        'LOCATION': 'localhost:6379'
-    },
+   'default': {
+       'BACKEND': 'redis_cache.RedisCache',
+       'LOCATION': 'localhost:6379',
+       'TIMEOUT': 60
+   },
 }
 
 TRANSLATE_API_KEY = 'AIzaSyB0D69gAJlfMTuQgIe-CN1r9lTpjeTdQRM'

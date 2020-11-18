@@ -32,7 +32,7 @@ class Quote(models.Model):
 
 class Like(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
-    quote = models.ForeignKey(Quote)
+    quote = models.ForeignKey(Quote, on_delete=models.CASCADE)
     uuid = models.CharField(max_length=255)
 
     class Meta:
