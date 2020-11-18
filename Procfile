@@ -1,0 +1,1 @@
+web: gunicorn halffull.wsgi --log-file -
