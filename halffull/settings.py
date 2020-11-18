@@ -151,13 +151,17 @@ LOGGING = {
     },
 }
 
-CACHE_BACKEND = 'redis_cache.cache://localhost:6379'
+# CACHE_BACKEND = 'redis_cache.cache://localhost:6379'
 CACHES = {
    'default': {
        'BACKEND': 'redis_cache.RedisCache',
-       'LOCATION': 'localhost:6379',
+       'LOCATION': os.,
        'TIMEOUT': 60
    },
+}
+
+CACHES = {
+    'default' : dj_redis_url.config()
 }
 
 TRANSLATE_API_KEY = 'AIzaSyB0D69gAJlfMTuQgIe-CN1r9lTpjeTdQRM'

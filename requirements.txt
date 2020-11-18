@@ -14,3 +14,4 @@ gunicorn
 simplejson
 redis_cache
 django-redis-cache 
+dj-redis-url
