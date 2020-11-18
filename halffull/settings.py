@@ -155,7 +155,7 @@ LOGGING = {
 CACHES = {
    'default': {
        'BACKEND': 'redis_cache.RedisCache',
-       'LOCATION': os.,
+       'LOCATION': 'localhost:6379',
        'TIMEOUT': 60
    },
 }
