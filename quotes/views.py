@@ -1,6 +1,6 @@
 from django.core import serializers
 from django.http import HttpResponse
-from django.utils import simplejson
+import json as simplejson
 from django.core.cache import cache
 from django.views.decorators.csrf import csrf_exempt
 
