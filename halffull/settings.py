@@ -134,7 +134,6 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'quotes',
-    'djcelery',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -168,5 +167,3 @@ CACHES = {
 
 TRANSLATE_API_KEY = 'AIzaSyB0D69gAJlfMTuQgIe-CN1r9lTpjeTdQRM'
 
-import djcelery
-djcelery.setup_loader()
