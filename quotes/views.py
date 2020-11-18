@@ -49,7 +49,7 @@ def like(request):
         uuid = request.POST.get('uuid', None)
         is_like = request.POST.get('like', False) == '1'
 
-        print request.POST
+        # print request.POST
 
         quote_like, created = models.Like.objects.get_or_create(quote_id=quote_id, uuid=uuid)
 
