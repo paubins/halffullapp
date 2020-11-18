@@ -1,6 +1,8 @@
 # Django settings for halffull project.
 import dj_database_url
 import dj_redis_url
+import os
+from urllib.parse import urlparse
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -155,17 +157,29 @@ LOGGING = {
 }
 
 # CACHE_BACKEND = 'redis_cache.cache://localhost:6379'
+# CACHES = {
+#    'default': {
+#        'BACKEND': 'redis_cache.RedisCache',
+#        'LOCATION': dj_redis_url.config()[,
+#        'TIMEOUT': 60
+#    },
+# }
+
+redis_url = urlparse(os.environ.get('REDISCLOUD_URL'))
 CACHES = {
-   'default': {
-       'BACKEND': 'redis_cache.RedisCache',
-       'LOCATION': 'localhost:6379',
-       'TIMEOUT': 60
-   },
+        'default': {
+            'BACKEND': 'redis_cache.RedisCache',
+            'LOCATION': '%s:%s' % (redis_url.hostname, redis_url.port),
+            'OPTIONS': {
+                'PASSWORD': redis_url.password,
+                'DB': 0,
+        }
+    }
 }
 
-CACHES = {
-    'default' : dj_redis_url.config()
-}
+# CACHES = {
+#     'default' : 
+# }
 
 TRANSLATE_API_KEY = 'AIzaSyB0D69gAJlfMTuQgIe-CN1r9lTpjeTdQRM'
 
