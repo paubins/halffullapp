@@ -1,5 +1,5 @@
 from django.core import serializers
-from django.http import JsonResponse
+from django.http import HttpResponse, JsonResponse
 import json as simplejson
 from django.core.cache import cache
 from django.views.decorators.csrf import csrf_exempt
@@ -40,7 +40,7 @@ def quote(request, mood=None, lang=None, uuid=None):
     except models.Like.DoesNotExist:
         pass
 
-    return JsonResponse(serializers.serialize("json", response), safe=False)
+    return HttpResponse(serializers.serialize("json", response), content_type='application/json')
 
 @csrf_exempt
 def like(request):
@@ -57,4 +57,4 @@ def like(request):
             quote_like.delete()
 
 
-    return JsonResponse(serializers.serialize("json", []))
+    return HttpResponse(serializers.serialize("json", []), content_type='application/json')

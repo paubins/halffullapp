@@ -186,6 +186,15 @@ CACHES = {
     }
 }
 
+# CACHE_BACKEND = 'redis_cache.cache://localhost:6379'
+# CACHES = {
+#    'default': {
+#        'BACKEND': 'redis_cache.RedisCache',
+#        'LOCATION': 'localhost:6379',
+#        'TIMEOUT': 60
+#    },
+# }
+
 # CACHES = {
 #     'default' : 
 # }
