@@ -1,5 +1,6 @@
 # Django settings for halffull project.
 import dj_database_url
+import dj_redis_url
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
