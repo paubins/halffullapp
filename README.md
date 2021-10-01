@@ -1,0 +1,3 @@
+# halffullapp
+
+Django app 
